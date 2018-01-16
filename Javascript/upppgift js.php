@@ -34,17 +34,6 @@
 				x.style.width = "32px";
 			}
 		</script>
-
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		
 		</body>
