@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Webbshop</title>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <header id="cart">
+            <div id="varukorg">
+                Varukorg: $<span class="total">0</span>
+            </div>
+            <div id="checkout">
+                <button onclick="alertPrice()">Checkout</button>
+            </div>
+        </header>
+
+        <main>
+            <div class="container 1">
+                <div class="thumb">
+                    <img src="goteborgs.png" />
+                </div>
+                <div class="options">
+                    <div class="info">
+                        <span>Lager: <span class="lager">50</span></span>
+                        <span>Pris: $<span class="pris">25</span></span>
+                    </div>
+                    <button onclick="wasteMoney(1)">Buy</button>
+                </div>
+            </div>
+
+            <div class="container 2">
+                <div class="thumb">
+                    <img src="hej.png" />
+                </div>
+                <div class="options">
+                    <div class="info">
+                        <span>Lager: <span class="lager">50</span></span>
+                        <span>Pris: $<span class="pris">100</span></span>
+                    </div>
+                    <button onclick="wasteMoney(2)">Buy</button>
+                </div>
+            </div>
+
+            <div class="container 3">
+                <div class="thumb">
+                    <img src="mus.jpg" />
+                </div>
+                <div class="options">
+                    <div class="info">
+                        <span>Lager: <span class="lager">50</span></span>
+                        <span>Pris: $<span class="pris">80</span></span>
+                    </div>
+                    <button onclick="wasteMoney(3)">Buy</button>
+                </div>
+            </div>
+        </main>
+
+        <script type="text/javascript">
+            function wasteMoney(id) {
+                var x = document.getElementsByClassName(id)[0];
+                var lager = x.getElementsByClassName("lager")[0].textContent;
+				if(parseInt(lager) == 0){ 		
+					return;
+				}
+                lowerLager(id, lager);
+
+                var pris = x.getElementsByClassName("pris")[0].textContent;
+                var total = document.getElementsByClassName("total")[0].textContent;
+                okaVarukorg(pris, total);
+
+                console.log(x + " " + lager + " " + pris);
+            }
+
+            function lowerLager(id, lager) {
+                var lager = document.getElementsByClassName(id)[0]
+                            .getElementsByClassName("lager")[0]
+                            .innerHTML = lager - 1;
+            }
+
+            function okaVarukorg(pris, total) {
+                document.getElementsByClassName("total")[0].innerHTML = parseInt(total) + parseInt(pris);
+            }
+
+            function alertPrice() {
+                var pris = document.getElementsByClassName("total")[0].textContent;
+                alert("Ditt inköp kommer kosta " + pris + " dollar");
+            }
+        </script>
+    </body>
+</html>
