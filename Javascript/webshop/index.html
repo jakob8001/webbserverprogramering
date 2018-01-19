@@ -8,7 +8,7 @@
     <body>
         <header id="cart">
             <div id="varukorg">
-                Varukorg: $<span class="total">0</span>
+                Varukorg: Kr:<span class="total">0</span>
             </div>
             <div id="checkout">
                 <button onclick="alertPrice()">Checkout</button>
@@ -23,7 +23,7 @@
                 <div class="options">
                     <div class="info">
                         <span>Lager: <span class="lager">50</span></span>
-                        <span>Pris: $<span class="pris">25</span></span>
+                        <span>Pris: Kr<span class="pris">200</span></span>
                     </div>
                     <button onclick="wasteMoney(1)">Buy</button>
                 </div>
@@ -36,7 +36,7 @@
                 <div class="options">
                     <div class="info">
                         <span>Lager: <span class="lager">50</span></span>
-                        <span>Pris: $<span class="pris">100</span></span>
+                        <span>Pris: Kr<span class="pris">900</span></span>
                     </div>
                     <button onclick="wasteMoney(2)">Buy</button>
                 </div>
@@ -49,7 +49,7 @@
                 <div class="options">
                     <div class="info">
                         <span>Lager: <span class="lager">50</span></span>
-                        <span>Pris: $<span class="pris">80</span></span>
+                        <span>Pris: Kr<span class="pris">750</span></span>
                     </div>
                     <button onclick="wasteMoney(3)">Buy</button>
                 </div>
@@ -84,7 +84,7 @@
 
             function alertPrice() {
                 var pris = document.getElementsByClassName("total")[0].textContent;
-                alert("Ditt inköp kommer kosta " + pris + " dollar");
+                alert("Ditt inköp kommer kosta " + pris*1.25 + " Kr");
             }
         </script>
     </body>
